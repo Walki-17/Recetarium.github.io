@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recetario de Juan</title>
+   <link rel="stylesheet" href="../static/css/style.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Recetario</h1>
+    </header>
+
+    <main>
+        <div class="contenedor-recetas">
+            {% for desayuno in desayunos%}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/' + desayuno.imagen) }}" alt="{{ desayuno.titulo }}" alt="Imagen de {{ desayuno.titulo }}">
+                    <h2>{{ desayuno.titulo }}</h2>
+                    <h3>{{ desayuno.categoria }}</h3>
+                    <p><strong>Ingredientes:</strong> {{ desayuno.ingredientes }}</p>
+                    <p><str>Pasos:</str
+                        ong> {{ desayuno.pasos }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
